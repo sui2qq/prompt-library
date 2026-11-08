@@ -1,0 +1,253 @@
+title,category,prompt
+润色文章,写作,"请把下面这段文字润色一遍：保留原意和信息量，句子更顺、更自然，去掉口水话和重复表达，语气保持{{语气：如正式/轻松/学术}}。先给润色后的全文，再用三条以内列出你主要改了什么。
+
+{{原文}}"
+提炼摘要,写作,"请阅读下面的内容，给我一份摘要：先用一句话说清核心结论，再列 3–5 个要点（每个要点不超过 30 字），最后列出文中出现的关键数字和专有名词，不要加入原文没有的信息。
+
+{{内容}}"
+写邮件,写作,帮我写一封邮件。收件人：{{收件人}}；目的：{{目的}}；必须包含的信息：{{要点}}；语气：礼貌、简洁，{{语气补充}}。给我两个版本：一版正式版，一版更简短的版本，主题行也一起写好。
+多风格标题,写作,"为下面这篇文章拟标题，一共 12 个：严肃新闻风 3 个、口语吸引点击风 3 个、提出问题风 3 个、数字清单风 3 个。每个标题不超过 {{字数上限：如20}} 字，不要标题党式的夸张承诺。
+
+文章主题：{{主题}}
+文章摘要：{{摘要}}"
+代码审查,编程,"请审查下面这段代码，按严重程度从高到低列问题：1) 会导致 bug 或安全风险的；2) 性能问题；3) 可读性和维护性。每条问题说明原因，并给出修改后的代码片段。最后给一个总体评价。
+
+语言：{{语言}}
+代码：
+{{代码}}"
+解释报错,编程,"我运行代码时遇到下面的报错。请用通俗的话解释：1) 这个错误是什么意思；2) 最可能的三个原因，按可能性排序；3) 每个原因怎么验证、怎么修。不要一上来就给一大段改好的代码，先让我定位问题。
+
+环境：{{环境，如 Python 3.11 / Node 20}}
+报错信息：
+{{报错}}
+相关代码：
+{{代码}}"
+编写单元测试,编程,"为下面的函数编写单元测试，使用 {{测试框架：如 pytest / Jest}}。覆盖：正常输入、边界值、空值或异常输入、容易出错的特殊情况。每个测试用例写清测试意图，命名要能看出测的是什么。
+
+{{函数代码}}"
+重构方案,编程,"这段代码能跑但越来越难改。请给出重构方案：先指出主要坏味道（重复、过长函数、耦合等），再给出分步骤的重构计划，每一步都保证行为不变、可单独验证。先给计划，不要直接重写全部代码，等我确认后再动手。
+
+{{代码}}"
+逐段讲解代码,编程,"请逐段讲解下面这段代码：按逻辑块切分，每一块说明它在做什么、为什么这样写、有什么需要注意的坑。遇到不常见的语法或库函数，单独解释。最后用一段话总结整段代码的整体思路。
+
+{{代码}}"
+费曼式讲解,学习,请用费曼学习法给我讲清「{{概念}}」：假设我完全没学过，先用生活例子打比方讲一遍，再给出准确的定义，然后出 3 个问题检查我是否真懂，并预告初学者最容易搞混的两个点。我回答问题后，请指出我理解错的地方。
+学习计划,学习,帮我制定学习计划。目标：{{目标}}；现有基础：{{基础}}；每天可用时间：{{时长}}；总周期：{{周期，如 6 周}}。请拆成按周推进的阶段目标，每周列具体任务和验收标准，最后给一个自测清单，学完能逐项打勾确认。
+出题自测,学习,"围绕「{{主题}}」给我出 10 道自测题：选择题 4 道、判断题 3 道、简答题 3 道，难度由易到难。先只给题目不要给答案；我答完后你再逐题批改，错题要讲清错在哪、正确思路是什么。
+
+我的水平：{{水平，如刚入门/备考中}}"
+地道翻译,翻译,"把下面这段{{源语言}}翻译成{{目标语言}}。要求：地道自然，像母语者写的，不要逐词硬译；习语和俚语换成目标语言里的对应说法；专业术语保持准确。翻译后附上 3 处你处理得最费劲的地方，说明你为什么这样译。
+
+{{原文}}"
+翻译并学表达,翻译,"把下面这段英文逐句翻译成中文，流畅但不口语化、不漏任何内容。每句按这个格式给：原句 / 逐词对照（只标关键难词和短语）/ 整句译文。另外把文中的长难句单独挑出来，拆主干和修饰成分讲一遍。
+
+{{英文原文}}"
+多角度分析,分析决策,请从多个角度分析「{{问题}}」：支持方怎么看、反对方怎么看、中立的事实数据怎么说。然后指出各方共同承认的事实、真正的分歧点在哪里，最后给出你认为最值得进一步核实的一个问题。不要急着站队。
+事件复盘,分析决策,帮我复盘这件事。背景：{{背景}}；经过：{{经过}}；结果：{{结果}}。请按时间线梳理关键节点，指出哪一步是转折点、当时有哪些其他选择，总结 3 条下次可复用的经验和 1 条必须避免的教训。
+方案对比表,分析决策,我要在这几个方案里选一个：{{方案列表}}。请做一张对比表，维度包括：成本、耗时、风险、可扩展性、适合人群。然后结合我的情况（{{我的情况和优先级}}）给出推荐，并说明在什么情况下应该改选另一个方案。
+先澄清再回答,效率,"在我提问之后、你回答之前，先向我确认最多 5 个关键问题，弄清我的真实目标、约束条件和期望的输出形式。我回答完你再正式作答。如果我的问题已经足够清楚，就直接回答，不要为了凑数而提问。
+
+我的问题：{{问题}}"
+优化提示词,效率,"请帮我优化下面这条提示词，让 AI 更容易给出准确、有用的回答。你可以补充角色设定、背景、输出格式和约束条件，但不要改变我的原意。先给优化后的版本，再简单说明你改了哪几处、为什么。
+
+原提示词：{{提示词}}
+使用场景：{{场景}}"
+整理会议纪要,效率,"把下面的会议记录整理成纪要，结构固定为：会议主题 / 参会人 / 已达成的决定（逐条）/ 待办事项（每条标注负责人和截止时间）/ 未定事项。只写记录里出现过的内容，没定的事不要替我们拍板。
+
+{{会议记录}}"
+模拟面试官,角色扮演,请扮演{{岗位}}的面试官给我做一场模拟面试。一次只问一个问题，等我回答后再追问或点评，问题由浅入深，覆盖基础、项目经历和场景题。全程保持真实面试的节奏和压力感，最后给一份评估：亮点、短板、补强建议。岗位要求：{{岗位要求}}
+英语口语陪练,角色扮演,"Act as my spoken English partner. Let us chat in English about {{话题}}, keep your replies short and natural, and ask me follow-up questions. When I make a grammar or word-choice mistake, gently show the corrected sentence after your reply, in brackets. My level: {{水平，如 B1}}. Start by asking me an easy opening question."
+治愈向·小橘猫窗台,动漫视频,"Anime style, vertical 9:16, 7 seconds. A small orange tabby cat sits on a sunlit windowsill in a quiet cozy room, warm golden afternoon light, gently blinking and twitching its ears, a curtain swaying softly in the breeze. Slow gentle push-in, calm and healing mood. No real-person look, no text, no subtitles, no watermark.
+（说明：竖屏 9:16、5–10 秒、暖黄灯光、安静温柔；场景可替换：{{场景，如窗台/被窝边/阳台花盆旁}}）"
+屋顶夕阳·正背影,动漫视频,"Anime style, vertical 9:16, 6 seconds. A girl seen completely from behind, standing at a rooftop railing watching the sunset, loose hoodie with the hood up covering her hair and ears, hands in pockets. She stays in the lower third of the frame and never turns around. The focus is the orange-purple sunset sky and the falling sun. Fixed camera, no zoom. No text, no signs, no watermark.
+（说明：全程正背影、不转头、固定机位，重点拍晚霞）"
+天台晚霞·连帽卫衣背影,动漫视频,"Anime style, vertical 9:16, 5–8 seconds. Back view only: an adult girl in a loose hoodie, hood up, hands in pockets, standing still by a rooftop railing, looking at a wide orange and violet evening sky. Composition keeps her small in the lower third; clouds drift very slowly. Locked-off shot. No text, no watermark, no face visible.
+（替换变量：{{时间，如日落前十分钟}}、{{天空颜色}}）"
+银杏大道骑行,动漫视频,"Anime style, vertical 9:16, 8 seconds. An adult girl rides a bicycle slowly down a road lined with golden ginkgo trees, fallen leaves drifting in the warm afternoon light, her scarf fluttering gently. Camera tracks alongside at a steady pace, calm and warm. No real-person look, no text, no watermark.
+（替换变量：{{季节}}、{{道具，如帆布包/竹篮}}）"
+长椅读书的午后,动漫视频,"Anime style, vertical 9:16, 7 seconds. An adult girl sits on a park bench reading a paper book, dappled sunlight through leaves, a small orange cat sleeping curled beside her. Very slow push-in, quiet and gentle. Warm color palette. No text, no watermark.
+（替换变量：{{书的类型}}、{{季节氛围}}）"
+城市夜景·天桥,动漫视频,"Anime style, vertical 9:16, 10 seconds. Night city pedestrian overpass, neon signs reflecting on wet pavement after rain, an adult girl with an umbrella walks slowly across. Slow steady push-in. Cyan-blue neon mixed with warm yellow street lamps. Cinematic, quiet mood. No real-person look, no readable text, no subtitles, no watermark.
+（说明：城市夜景版，8–15 秒；地点可替换：{{地点，如天桥/便利店门口/小巷}}）"
+便利店雨夜,动漫视频,"Anime style, vertical 9:16, 9 seconds. Outside a convenience store on a rainy night, warm light spilling from the windows, an adult girl stands under the awning shaking rain off her umbrella, neon reflections shimmering in puddles. Slow push-in, teal and warm amber palette. No readable text on signs, no watermark.
+（替换变量：{{人物动作}}）"
+撑伞少女·积水霓虹,动漫视频,"Anime style, vertical 9:16, 12 seconds. An adult girl holding a transparent umbrella walks slowly through a night street, neon lights in cyan and magenta reflecting on the water-covered ground, each step making small ripples. Camera pushes in very slowly at low angle. No real-person look, no text, no subtitles, no watermark.
+（替换变量：{{伞的颜色}}、{{街道氛围}}）"
+深秋天台·红叶,动漫视频,"Anime style, vertical 9:16, 8 seconds. Late autumn rooftop, red maple leaves drifting past the railing, an adult girl in a long coat leans on the railing looking at the distant warm sunset, seen from behind at a distance. Gentle breeze, fixed camera with a very slow drift. Warm amber light. No text, no watermark.
+（替换变量：{{人物服装}}）"
+夏日乡间骑行（Summer Detour 结构）,动漫视频,"Anime style, vertical 9:16, 15 seconds, nostalgic summer mood. Subject: an adult girl on an old bicycle with a straw hat hanging on her back. Setting: a country road between rice fields, cicadas season, late afternoon golden light. Camera: slow tracking shot, then a gentle rise to a wide view of fields and distant hills. Palette: warm gold and fresh green. No real-person look, no text, no watermark.
+（结构拆解：主体+服装+道具+环境+镜头+光线+时长+禁令，换主体和环境即可复用）"
+海边电车与晚风,动漫视频,"Anime style, vertical 9:16, 8 seconds. A tram passes slowly along a seaside road at dusk, an adult girl stands on the platform holding her hat against the sea breeze, orange sunset reflecting on the water. Camera pans slowly with the tram. Warm and quiet. No text, no watermark.
+（替换变量：{{交通工具}}、{{时间}}）"
+电影感图片提示词构建器,图片生成,"Act as a Cinematic AI Image Prompt Builder. I give you a one-line idea, you return ONE polished English image prompt in this exact structure: [subject and action, one line] / [camera: lens, angle, framing] / [lighting] / [color palette] / [composition] / [aspect ratio]. No explanation, just the prompt, then one alternative version with a different mood.
+My idea: {{一句话想法}}
+Aspect ratio: {{比例，如 9:16 / 16:9 / 1:1}}"
+大肥鱼·单人立绘（默认裙装）,图片生成,"Anime illustration, full-body standing portrait of an adult female original character: very long deep-blue hair reaching the waist with light-blue gradient tips, a small ahoge curl on top of her head, sharp deep-blue fin-like ears on the sides of her head, a big whale tail hanging down behind her to her feet, blue eyes. Outfit: a light cream off-shoulder short dress, hem at mid-upper thigh, slightly low neckline, dark floral pattern on the side of the skirt. Plain light solid background, no scenery, clean character-sheet style, high detail.
+（说明：形象按固定设定写死；不要背景、纯色浅底）"
+大肥鱼·棕色连帽卫衣（原样复制）,图片生成,"Anime illustration, reproduce the reference character faithfully: very long deep-blue hair to the waist with light-blue gradient tips, small ahoge on top, sharp deep-blue fin ears at the sides of the head, a big whale tail behind her reaching her feet, blue eyes. Outfit exactly as the reference: a brown hooded sweatshirt. Keep the outfit's shape, color and details unchanged, do not redesign it. Plain light solid background, no scenery.
+（说明：仅在要求原样复制参考图时用这一条，衣服用图里的棕色连帽卫衣）"
+橘猫阳光窗台,图片生成,"Anime illustration, a chubby orange tabby cat sitting on a wooden windowsill in warm afternoon sunlight, eyes half closed in contentment, a small potted plant beside it, soft golden light and gentle shadows, cozy healing atmosphere, detailed fur. Aspect ratio {{比例，如 4:5}}.
+（替换变量：{{猫的动作，如伸懒腰/看窗外的小鸟}}）"
+黑长发白衬衫·窗边,图片生成,"Anime illustration, an adult girl with long straight black hair wearing a simple white shirt, sitting by a bright window with a book, soft daylight, calm and clean composition, gentle color palette, upper-body shot. Plain soft background. Aspect ratio {{比例}}.
+（替换变量：{{动作}}、{{道具}}）"
+棕长发蓝碎花裙·窗边,图片生成,"Realistic photo style, an adult woman with long brown hair wearing a blue floral dress, sitting by a cafe window, natural window light, shallow depth of field, warm afternoon tones, candid and natural expression. Aspect ratio {{比例}}.
+（替换变量：{{场景}}、{{时间}}）"
+金长发白裙·花园全身,图片生成,"Anime illustration, full-body shot of an adult girl with long golden hair in a flowing white dress, standing in a flower garden, soft morning light, petals drifting in the breeze, fresh green and white palette, wide composition with space above her head. Aspect ratio {{比例}}.
+（替换变量：{{花园花种}}、{{时间}}）"
+Midjourney 咒语生成器,图片生成,"Act as a Midjourney Prompt Generator. Turn my Chinese description into an English Midjourney prompt: subject first, then environment, lighting, style keywords, and end with parameters. Give me 3 versions: realistic photo, anime illustration, and cinematic. Always append a suitable --ar and --v, and add --no for things I say I don't want.
+我的描述：{{描述}}
+不要出现：{{禁令，如文字、水印、多余的手指}}"
+SDXL 局部重绘·只改衣服,图片生成,"SDXL img2img / inpaint 操作单（不是聊天提示词，照着填参数）：
+1) 只用蒙版圈住衣服区域，脸、手、头发、背景全部不圈；
+2) Denoising strength 0.5 左右（0.45–0.55），只改衣服和蒙版内的部分，保住脸和身体结构；
+3) LoRA 最多叠两个，权重比平时降一档；
+4) Prompt 只写新衣服：{{新衣服的英文描述}}；Negative 写清：deformed hands, bad face, changed face, blurry；
+5) 底模：{{底模，如 Pony Diffusion V6 / Juggernaut-XL-v9}}；seed 先固定一个，逐项改参数对比。"
+修脸修手补丁流程,图片生成,"SDXL 出图后修脸修手流程（照单执行）：
+1) 先看整体：构图和衣服对不对，不对就换 seed，不要在废图上修；
+2) 脸崩：用 ADetailer 或局部重绘只圈脸，strength 0.35–0.45，prompt 只写五官要求，其余不变；
+3) 手崩：局部重绘只圈手，strength 0.5 左右，negative 加 deformed fingers, extra fingers, fused fingers；
+4) 每修一处存一个新文件，不要覆盖原图，方便回退；
+5) LoRA 叠太多会加重崩坏，修补时先减到最多两个。
+本次问题：{{问题，如左手多指/眼睛不对称}}"
+桌面壁纸·治愈插画风,图片生成,"Anime illustration wallpaper, wide 16:9. A quiet cozy room corner at dusk: a wooden desk, a warm lamp, books and a cup of tea, a small orange cat asleep on the windowsill, soft warm yellow light against the blue evening outside the window. Peaceful, detailed, no people, no text, no watermark.
+（替换变量：{{房间主题}}、{{季节}}）"
+完形填空逐题讲,考研英语,"我在做考研英语一的完形填空。请逐题讲下面这道题：先翻译空格所在整句，再分析四个选项的词义差别和搭配，最后说明为什么选这个选项、其他选项错在哪。不要只报答案，要讲判断方法，让我下次能自己做。
+
+题目和选项：{{题目}}
+我的选择：{{我的答案}}"
+阅读 Text 精讲,考研英语,"请精讲这篇考研英语阅读：1) 先一段一段给主旨句；2) 每道题先讲正确选项的准确含义和它在原文中的依据句，再逐个讲干扰项错在哪（偷换概念/过度推断/无中生有/正反混淆）；3) 最后总结这篇的出题套路。
+
+文章：{{文章}}
+题目：{{题目和选项}}"
+七选五逻辑梳理,考研英语,"请帮我梳理这篇七选五（Part B）的逻辑：先画出全文的话题链和每段的功能，再逐空分析：空格前后的指代词、连接词、复现词分别指向哪个选项。重点讲 41–45 每一空为什么是那个选项、看起来也像的选项为什么不对（比如态度相反、文中根本没提）。
+
+文章与选项：{{文章和 A–G 选项}}"
+Part C 翻译逐词对照,考研英语,"请按考研英语 Part C 的标准处理这段英文：逐词翻译、流畅但不口语化、不漏任何内容。每句给三行：原句 / 逐词对照（标出难词、短语和从句划分）/ 定稿译文。最后指出这段里最容易丢分的两个点（比如指代还原、被动语态处理）。
+
+{{英文段落}}"
+51 应用文模板·填充版,考研英语,"请按考研英语一 51 题应用文的要求，帮我套模板写一篇{{文体，如建议信/道歉信/通知}}。结构：称呼 → 首段点明写信目的 → 中段分 2–3 点展开（用我给的要点）→ 结尾礼貌收束并落款。语言正式得体，词数约 100。写完后标出文中可替换的万能句，方便我背诵迁移。
+
+题目要求：{{题目}}
+必须包含的要点：{{要点}}"
+52 图画作文模板·填充版,考研英语,"请按考研英语一 52 题图画作文帮我成文，三段式：第一段描述画面（人物、动作、文字标注都要写到）；第二段揭示寓意并联系{{社会现象}}展开 2 个论点；第三段给出态度和建议。目标词数约 180。写完列出本题可迁移的主题词和句型各 5 个。
+
+画面内容：{{画面描述}}
+立意：{{立意}}"
+长难句拆解,考研英语,"请拆解这个长难句：1) 标出主句的主谓宾；2) 把每个从句和修饰成分单独拎出来，说明它修饰谁；3) 给出直译，再给一版符合中文习惯的顺译；4) 点出这个句子在考试里最容易理解错的地方。
+
+句子：{{句子}}"
+单词词根记忆,考研英语,帮我用词根词缀法记这组单词：{{单词列表}}。每个词给：拆分（前缀+词根+后缀及各自含义）/ 核心含义是怎么推出来的 / 一个考研真题风格的例句 / 一个容易混淆的近形或近义词并说明区别。最后把这组词串成一句话帮我联想记忆。
+模糊描述变具体,提示词优化,"我给你一句含糊的需求，请按这个结构把它改写成一条完整提示词，缺的信息用 {{占位符}} 标出来提醒我补，不要自己编：
+角色：你是谁、擅长什么
+背景：这件事的上下文
+任务：具体要做什么
+输出格式：结构、长度、形式
+限制：不要做什么、必须遵守什么
+
+我的含糊需求：{{需求}}"
+给视频生成写提示词,提示词优化,"帮我把下面这个想法写成视频生成工具能用的提示词，英文主体+中文说明。按顺序组织：主体与外貌 → 动作 → 场景环境 → 镜头运动（固定/推近/跟随）→ 光线 → 配色 → 画幅与时长 → 禁令（no text, no watermark 等）。我没说清的地方先问我，不要自己编。
+
+我的想法：{{想法}}
+工具：{{工具，如可灵/即梦/Runway}}"
+给画图写提示词,提示词优化,"帮我把下面的想法写成画图提示词，输出两份：一份英文版（主体、服装、道具、环境、镜头、光线、配色、构图、比例依次排列），一份中文对照说明。人物年龄、服装等关键信息我没写的，用 {{占位符}} 标出来。
+
+我的想法：{{想法}}
+风格：{{风格，如二次元插画/写实照片/电影感}}"
+给代码助手写提示词,提示词优化,"帮我把下面这个编程需求改写成给代码助手的提示词，必须包含：项目背景和技术栈、输入输出示例、边界情况、不要改动的范围、期望的交付形式（完整文件/补丁/先给方案）。缺的关键信息列成问题问我。
+
+我的需求：{{需求}}
+技术栈：{{技术栈}}"
+中文需求翻成英文提示词,提示词优化,"把我下面的中文需求翻译成一条可直接使用的英文提示词。要求：不是逐字直译，要按英文提示词的习惯重组（主体在前、细节随后、限制最后）；专业术语用业内常用说法；翻译完附一份中英对照的关键词表。
+
+中文需求：{{需求}}
+用途：{{用途，如画图/视频/写作}}"
+检查提示词的歧义与缺失,提示词优化,"请审查下面这条提示词，只做三件事：1) 指出有歧义、可能被理解偏的表述，逐条引用原文；2) 列出缺失的关键信息（目标、受众、格式、限制等）；3) 给一版补全后的提示词。不要评价我的想法本身好不好。
+
+提示词：{{提示词}}"
+X 短视频文案,社交媒体,"帮我给这条短视频写 X（推特）配文：第一行是钩子（一句话勾住人，不超过 20 字），然后 2–3 行补充内容，最后给 3–5 个相关 hashtag（中英混排）。语气自然像真人分享，不要营销腔。给 3 个版本让我挑。
+
+视频内容：{{内容}}
+想强调的点：{{要点}}"
+病毒短视频拆解分析,社交媒体,"Act as a Viral Video Analyzer for TikTok and Xiaohongshu. Analyze the video I describe: 1) the hook in the first 3 seconds; 2) pacing and shot structure; 3) why people comment or share it; 4) what is reusable for my own videos and what only worked because of the creator. End with a checklist I can copy.
+视频描述：{{描述}}
+数据（如有）：{{播放/点赞/评论量}}"
+标题钩子生成 10 个,社交媒体,围绕「{{主题}}」给我 10 个短视频/帖子标题钩子，类型要分散：提问型、反常识型、数字型、对比型、悬念型各至少 1 个。每个不超过 18 字，不许夸大承诺、不许编造数据。最后按吸引力排出前 3 名并说明理由。
+评论区高情商回复,社交媒体,我的帖子下面有这条评论：{{评论}}。帮我想 3 条回复：一条幽默化解、一条认真回应、一条简短带过。语气友好不卑不亢，不引战、不阴阳怪气。我的立场是：{{立场}}。
+长文拆成短帖串,社交媒体,"把下面这篇长文拆成一条 X 短帖串（thread）：第 1 条是钩子+核心结论；之后每条只讲一个点，条与条之间有承接；最后一条总结+留一个讨论问题。每条控制在平台单条长度内，不要把一句话硬拆成两条。原文信息一点都不要丢，也不要加原文没有的观点。
+
+{{长文}}"
+热点追踪选题,社交媒体,围绕我的领域「{{领域}}」，帮我做热点选题：先列出这个领域最近常见的 5 类热点话题模式（不要编造具体新闻，只给模式），再结合每一类给我 2 个可做的选题角度，标注每个选题的时效性（越快发越好/可常青）和翻车风险。
+故事开场,写作进阶,帮我写一个故事开场，约 300 字。设定：{{设定}}；主角：{{主角}}；基调：{{基调，如悬疑/治愈/热血}}。要求：第一句就带钩子，前三句内出现一个不寻常的细节，不要先交代大段世界观，结尾停在一个让人想往下看的地方。写完再给我 2 个完全不同风格的备选第一句。
+人物小传,写作进阶,帮我写一份人物小传：姓名{{姓名}}，年龄{{年龄}}，职业{{职业}}。内容包括：外貌的两个标志性特征、性格的亮面与暗面各一、一段决定他人生的往事、一个没说出口的愿望、说话习惯和口头禅。不要写成简历，要写得像能直接指导后续写作的人物档案。
+世界观设定,写作进阶,帮我搭建一个世界观框架，题材是{{题材}}。按这几块写：世界的基本规则（与现实最大的不同）、力量或技术体系及其代价、社会结构与主要矛盾、普通人的一天是什么样、三个可以自然长出故事冲突的点。设定之间不能自相矛盾，有冲突先告诉我。
+对话写作,写作进阶,帮我写一段对话。人物 A：{{A的身份与性格}}；人物 B：{{B的身份与性格}}；场景：{{场景}}；表面在聊{{话题}}，实际上 A 想{{真实目的}}，B 在回避{{回避的事}}。要求：对话里带潜台词，不要把心里话全说破，适当加动作和停顿，总长度约 400 字。
+改写成不同语气,写作进阶,"把下面这段文字分别改写成四种语气：正式书面、轻松口语、冷峻克制、热情安利。内容信息保持不变，只改语气和表达。每版之间空一行，并标注语气名称。
+
+{{原文}}"
+公众号长文结构,写作进阶,帮我给一篇公众号长文搭结构。主题：{{主题}}；读者：{{目标读者}}；目的：{{目的，如科普/观点/种草}}。给出：一级标题全列、小标题逐个列、每节要回答的问题、适合放案例或数据的位置、结尾的收束方式。先给结构不要写全文，我确认后再逐节展开。
+需求拆解成任务清单,编程进阶,"把下面这个需求拆解成可执行的开发任务清单：按先后依赖排序，每项写清做什么、完成标准（怎么算做完）、预估复杂度（小/中/大）。单独列出需求里没说清、需要向产品确认的问题。
+
+需求：{{需求}}
+技术栈：{{技术栈}}"
+写 README,编程进阶,"根据下面的项目信息帮我写一份 README：项目名{{项目名}}，一句话简介、核心功能列表、快速开始（安装与运行命令）、目录结构说明、配置项说明、常见问题。语气简洁，给第一次接触项目的人看，不要营销话术。
+
+项目信息：{{信息}}"
+写 Git 提交信息,编程进阶,"根据下面的改动描述，帮我写 Git 提交信息：遵循 Conventional Commits（feat/fix/docs/refactor 等），标题一行说清改了什么，正文列动机和影响范围。给 3 个候选，第一个是你最推荐的。
+
+改动描述：{{改动}}"
+排查性能问题,编程进阶,我的程序出现了性能问题：{{现象，如接口从 200ms 涨到 3s}}。环境：{{环境}}；最近改动：{{最近改动}}。请按排查顺序给我一份清单：先查什么、用什么工具或命令看什么指标、看到什么结果说明是哪类问题。不要猜结论，带我一步步定位。
+写正则表达式,编程进阶,帮我写一个正则表达式，目标：{{要匹配/提取/校验的内容}}。使用环境：{{语言或工具，如 JavaScript/Python/grep}}。请给出正则本体、逐段解释每个部分的意思、5 个应该命中的例子和 3 个不应该命中的例子，并提醒边界情况。
+报错求助信息清单,编程进阶,"我要拿着报错去问人（或问 AI），帮我把信息整理成一份完整的求助帖：运行环境（系统、语言与版本）、完整报错原文、最小可复现代码、我期望的结果 vs 实际结果、我已经试过的方法。缺什么直接问我，不要替我编。
+
+我现在手头的信息：{{信息}}"
+论文速读,效率进阶,"帮我速读这篇论文，给我一份速读笔记：研究问题是什么、方法一句话概括、核心结论 3 条、证据强度如何（样本、方法有没有明显局限）、与我关注的「{{我的关注点}}」有什么关系。最后给判断：值得精读还是知道结论即可，说明理由。
+
+{{论文内容或摘要}}"
+做 Anki 卡片,效率进阶,"把下面这段学习内容做成 Anki 卡片素材，一行一张，正面是问题、背面是答案，用制表符分隔方便导入。要求：一张卡只考一个知识点，问题要具体不要宽泛，总共 {{数量，如 15}} 张左右，难点内容可以多拆几张。
+
+{{学习内容}}"
+周复盘,效率进阶,带我做一次周复盘。我这周的情况：{{本周记录}}。请按这个结构整理：本周真正推进了的事（按成果说，不按忙碌程度）、没做到的事及真实原因、下周最重要的 3 件事、应该停掉或减少的 1 件事。语气直接，不要鸡汤。
+目标拆解 OKR,效率进阶,帮我把这个大目标拆成 OKR：目标是{{目标}}，周期{{周期}}。给 1 个 Objective 和 3 个可量化的 Key Results，每个 KR 再拆出本月就能动手的前两步。KR 必须是结果指标，不要把「做了什么」写成 KR。
+会议纪要升级版,效率进阶,"把下面的会议记录整理成升级版纪要，除了常规的决定和待办（带负责人与截止时间），再多两节：一是「讨论中没有解决的分歧」，写清各方观点；二是「下次会议前需要准备的材料」。只写记录里有的内容。
+
+{{会议记录}}"
+邮件催办不失礼,效率进阶,帮我写一封催办邮件。背景：{{事情}}在{{日期}}就交给了{{对方}}，原定{{截止时间}}完成，现在还没收到。语气：礼貌但明确，先给对方留台阶（可能有难处），再给一个清楚的新时间点。给我长短两个版本。
+英语辩论陪练,角色扮演进阶,"Act as my English debate partner. Topic: {{辩题}}. You take the opposite side of mine (my stance: {{我的立场}}). Rules: one argument per turn, keep it under 120 words, ask me a pointed question at the end of each turn. After 4 rounds, summarize both sides fairly and tell me my weakest argument. Correct only my serious grammar errors, briefly."
+面试官·技术岗,角色扮演进阶,请扮演资深技术面试官，岗位：{{技术岗位，如前端开发}}。面试分三段：八股基础（3 题）、项目深挖（顺着我的回答追问细节）、一道现场设计题。一次一题，我答完再点评对错和深度，最后给录用建议和补强清单。我的简历要点：{{简历要点}}
+面试官·产品岗,角色扮演进阶,请扮演产品总监面试我应聘产品经理。重点考：需求分析、优先级判断、数据意识。多用场景题（比如「{{场景示例}}」这类），我回答后请追问「为什么」，不要轻易放过模糊的回答。最后给评估：思维亮点、表达问题、补强建议。
+心理倾听陪练,角色扮演进阶,请扮演一个耐心的倾听者。我说的事情是：{{事情}}。你的任务只有：认真倾听、复述你听到的感受让我确认、问开放的问题帮我把话说完。不要诊断、不要贴标签、不要急着给建议；如果我明确问你建议，你再给。语气温和，不说教。
+旅行规划师,角色扮演进阶,请扮演旅行规划师，帮我规划去{{目的地}}的{{天数}}天行程。同行人：{{同行人}}；预算：{{预算}}；偏好：{{偏好，如慢节奏/美食/少排队}}。先问清我还没说的信息再排表，行程按天列：上午/下午/晚上安排、交通方式、每个点大概停留多久，并留半天空白机动。
+健身教练,角色扮演进阶,请扮演我的健身教练。我的情况：{{身体情况与目标}}；可用器械：{{器械}}；每周能练{{次数}}次、每次{{时长}}。给我一份周计划：每次练什么、动作组数次数、组间休息，以及每个动作最容易做错的一点。有旧伤或不适的地方我会标注，你要避开相关动作。
+冰箱食材厨师,角色扮演进阶,请扮演厨师，用我冰箱里现有的食材出菜谱。现有食材：{{食材清单}}；可用调料默认家里常备；忌口：{{忌口}}。给我 3 个方案：一个 15 分钟快手菜、一个下饭菜、一个可以多做点备餐的。每个方案写清步骤和火候要点，缺关键食材就直说缺什么，不要硬凑。
+Midjourney 参数速查,工具对照,"Midjourney 常用参数速查（贴在生成时对照）：
+--ar 宽高比，如 --ar 9:16 竖图、--ar 16:9 横图、--ar 1:1 方图
+--v 版本，如 --v 6
+--style raw 减少默认美化、更听话
+--s / --stylize 风格化强度 0–1000，越高越艺术、越不听描述
+--chaos 0–100，结果多样性
+--no 后面跟不要的元素，如 --no text, watermark, extra fingers
+--q 质量档位
+用法示例：{{主体描述}} --ar 9:16 --v 6 --no text, watermark"
+SDXL 参数速查,工具对照,"SDXL 常用参数速查：
+尺寸：竖图 832×1216 或 896×1152，横图 1216×832，方图 1024×1024
+步数 Steps：25–35 足够，多了收益很小
+采样器：DPM++ 2M Karras 或 Euler a（动漫向常用）
+CFG：6–8，太高容易过饱和和崩坏
+底模：写实 Juggernaut-XL-v9，二次元 Pony Diffusion V6，通用 SDXL Base 1.0
+LoRA：最多叠两个，权重从 0.6–0.8 起试，崩图先降权重
+img2img 强度：改衣服 0.5 左右，只修脸 0.35–0.45"
+视频生成通用禁令清单,工具对照,"给视频生成提示词结尾贴的禁令清单（英文原文粘贴，中文是说明）：
+no text, no subtitles, no watermark —— 不要文字、字幕、水印
+no real-person look, anime style only —— 不要真人感（动漫向用）
+no extra fingers, no deformed hands —— 不要多指和畸形手
+no melting hair, no distorted ears —— 不要融化的头发和变形的耳朵
+no flickering, no morphing faces —— 不要闪烁和变脸
+no logo, no readable signs —— 不要 logo 和可读招牌文字
+按本次需求删掉不相关的行即可，全贴也行。"
+图生视频分镜表,工具对照,帮我把这张图的图生视频做一张分镜表。我会提供首帧图和想拍的内容：{{内容}}。分镜表按秒拆：0–2s 画面与镜头、2–5s 变化、5s 以后收尾；每段写清主体动作、镜头运动、光线变化。再把这张表转成一段可直接粘贴的英文视频提示词，结尾带禁令清单。时长：{{时长}}；画幅：{{画幅，如 9:16}}。
+SDXL 底模与 LoRA 搭配速查,工具对照,"本地 SDXL 搭配速查（Drive 已存，按需调用）：
+底模三选一：SDXL Base 1.0（通用打底）、Juggernaut-XL-v9（真人写实向）、Pony Diffusion V6（二次元向）
+LoRA 分两类：真人向（Detail Tweaker XL、DetailedEyes v3、Perfect Eyes XL、FaeTastic Details 等）与二次元向（ExpressiveH、Pony Detail Tweaker、Pony Realism Slider 等），不要跨类乱叠
+原则：一次最多叠两个 LoRA，权重降一档起试；img2img 改图强度 0.5 左右，只改要改的部分、保住脸和身子
+本次需求：{{需求，如画真人风窗边图/改一张图的衣服}}"
